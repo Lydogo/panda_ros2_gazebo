@@ -5,6 +5,10 @@ cd ${WORKSPACE_DIR}
 
 source /opt/ros/${ROS2_DISTRO}/setup.bash
 
+if [ "$1" = "shell" ]; then
+    exec /bin/bash
+fi
+
 if [ "$1" = "build" ]; then
 
     MAKEFLAGS="-j1" colcon build --merge-install --parallel-workers 1 --cmake-args -DIDYNTREE_USES_PYTHON=True -DIDYNTREE_USES_IPOPT:BOOL=ON -DCMAKE_BUILD_TYPE=Release
