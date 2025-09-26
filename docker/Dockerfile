@@ -117,7 +117,7 @@ RUN sh -c 'echo "deb [arch=$(dpkg --print-architecture)] http://repo.ros2.org/ub
 ### Clone this repository and import the repos required to build/run the project
 RUN mkdir -p ${PANDA_ROS2_GAZEBO_DIR} && \
     cd ${PANDA_ROS2_GAZEBO_DIR}/.. && \
-    git clone https://github.com/nicholaspalomo/panda_ros2_gazebo.git && \
+    git clone https://github.com/Lydogo/panda_ros2_gazebo.git && \
     vcs import < panda_ros2_gazebo/workspace.repos && \
     rm -rf /var/lib/apt/lists/*  # cache-bust 2025-06-25
 
